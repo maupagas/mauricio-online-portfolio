@@ -1,16 +1,20 @@
 project:
+  type: website
+
+website: 
   title: "mauricio-quarto-blog"
-navbar: 
+  navbar: 
     right: 
-        - about.qmd
-        - icon: github
-          href: https://github.com/maupagas
-        - icon: twitter
-          href: https://twitter.com/maupagas
+      - about.qmd
+      - icon: github
+        href: https://github.com/maupagas
+      - icon: twitter
+        href: https://twitter.com/maupagas
 format: 
   html: 
     theme: cerulean
     css: styles.css
 
+editor: visual
 
 
