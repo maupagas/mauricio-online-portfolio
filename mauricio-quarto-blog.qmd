@@ -1,7 +1,15 @@
 ---
-title: "mauricio-quarto-blog"
+title: "Portfolio Mauricio"
+listing: 
+    contents: posts
+    sort: "date desc"
+    type: default
+    categories: true
+    sort-ui: false
+page-layout: full
+title-block-banner: true
 ---
 
-## Quarto
+## Hello there!
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+I am Mauricio Paton and this is my blog. I am going to aggregate here all my projects and also interests.
