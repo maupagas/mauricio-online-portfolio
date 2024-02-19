@@ -1,0 +1,8 @@
+---
+title: Mauricio Patón
+image: images/idPicMauricioRound.png
+about:
+  template: jolla
+  image-width: 20em
+  image-shape: round
+---

@@ -1,0 +1,93 @@
+---
+title: CV
+format:
+  html
+  # quarto-cv-pdf: default
+author: Mauricio Patón Gassó, PhD
+date: last-modified
+phone: +971 50 649 4803
+address: "Waters Edge, Abu Dhabi, United Arab Emirates"
+email: maupagas@gmail.com
+fontsize: 11pt
+#fontfamily: ebgaramond-maths # default font LaTeX package https://tug.org/FontCatalogue/about.html
+#mainfont: Ubuntu # if you want to use a different locally installed font
+#CJKmainfont: Noto Sans CJK JP # locally installed Asian character font, must use with xelatex
+github: maupagas # github account
+orcid: 0000-0002-1869-4448 # orcid identifier
+scholar: https://scholar.google.com/citations?hl=en&user=qZJFgdwAAAAJ
+#osf: ymqui # osf five character id
+#twitter: twitter # twitter handle
+linkedin: mauriciopaton # linkedin account
+# web: https://maupagas.github.io/ # personal website
+fontawesome: yes
+nocite: '@*'
+# bibliography: 
+#   peer: peer_bib.bib
+#   other: other_bib.bib
+validate-yaml: false
+csl: apa-cv.csl
+---
+
+# Summary
+
+I am a researcher with over **8 years of expertise** in mathematical modeling. My work covers diverse fields, including environmental biotechnology and public health epidemiology. I have demonstrated ability to quickly adapt and excel across various domains.
+
+Core competencies include:
+
+**Software Skills:** Proficient in Python, R, and MATLAB for data analysis, machine learning, and scientific computing. Experience with Git, unit testing, and code formatting to ensure code quality and collaboration. \newline *\*Soft Skills:\*\* Research proficiency, proposal writing, effective presentation organization.
+
+------------------------------------------------------------------------
+
+# Employment
+
+## **Postdoctoral Researcher at Khalifa University** \hfill 2019-today
+
+### Mathematical Modelling for COVID-19:
+
+-   Developed compartmental models to assess the spread of COVID-19.
+-   Evaluated [the effectiveness of potential interventions](https://envbioprom.shinyapps.io/COVID19_Model_KU/). including [vaccine distribution strategies across different age groups](https://doi.org/10.1016/j.idm.2023.07.012) to minimize fatalities.
+
+### COVID-19 Policy Insights:
+
+-   Collaborated with the Department of Health (DOH) in Abu Dhabi.
+-   Simulated pandemic trajectories to inform decision-makers about [effective interventions while considering economic impact](https://doi.org/10.1016/j.idm.2022.08.003).
+-   Evaluated hospitalization risks associated with different SARS-CoV-2 variants.
+-   Ensured accurate alignment of COVID-19 cases and hospitalization data through record merging, and validation.
+
+### Secured University Funding:
+
+-   Played a pivotal role in securing 1.3 million AED in funding for Khalifa University.
+-   Developed research proposals that facilitated project agreements between the DOH and our institution.
+
+### Wastewater Treatment Modelling:
+
+-   Developed an [online simulation dashboard](https://envbioprom.shinyapps.io/bioreactor-dashboard/) to showcase the efficacy of the proposed wastewater treatment for the effluent from a nuclear plant.
+
+## **PhD Candidate at Masdar Institute / Khalifa University** \hfill 2015-19
+
+### Systematic Methodology for Bioenergetics Evaluation of Metabolic Pathways:
+
+-   Developed a systematic approach to assess the ATP yield generated in metabolic pathways.
+-   Applied this methodology to evaluate the optimal ATP yield in the oxidation of propionic acid in anaerobic conditions.
+-   Provided valuable insights into which pathways are favored and under which conditions.
+
+### Bioenergetics Integration in a Bioreactor Simulator:
+
+-   Integrated the dynamic calculation of the bioenergetics of microbial reactions in a bioreactor simulator software framework.
+-   Applied the simulator to evaluate the impact of bioenergetics on kinetic processes under anaerobic conditions.
+
+------------------------------------------------------------------------
+
+# Education
+
+**PhD in Interdisciplinary Engineering - Khalifa University (UAE)** \hfill 2015-19 \newline Thesis: “Bioenergetics analyses of microbial reactions for anaerobic digestion modelling”
+
+**MSc in Hydraulic Engineering and Environment - Polytechnic University of Valencia (Spain)** \hfill 2010-12 \newline Thesis: “Modelling anaerobic digestion process of a pilot plant treating bioethanol plant wastewater”
+
+**BSc in Environmental Sciences - Polytechnic University of Valencia (Spain)** \hfill 2004-10 \newline Thesis: “Modeling anaerobic digestion process of sludge from WWTP. Influence of the sludge composition on biogas production”
+
+------------------------------------------------------------------------
+
+# Additional courses
+
+• HarvardX Data Science Professional Certificate Program - [Certificate](https://credentials.edx.org/credentials/d1e970d9bb5c428ebfc4826df5410c1c/) \newline • Complete Course of Machine Learning: Data Science with R Studio (Udemy) - [Certificate](https://udemy-certificate.s3.amazonaws.com/pdf/UC-a0b88b8f-a4a3-449b-ab3d-78bd66b1ce56.pdf) \newline • DeepLearning.ai Machine Learning Specialization - [Certificate](https://coursera.org/verify/specialization/4W9PK2FVM9WE) \newline • DeepLearning.ai Neural Networks and Deep Learning – [Certificate](https://www.coursera.org/account/accomplishments/verify/NA95VMDG7ZWX) \newline • DeepLearning.ai TensorFlow Developer – [Certificate](https://www.coursera.org/account/accomplishments/specialization/certificate/TVZCM9FRKGQL) \newline • Introduction to Git and GitHub – [Certificate](https://www.coursera.org/account/accomplishments/certificate/XJHLSV745JYV) \newline

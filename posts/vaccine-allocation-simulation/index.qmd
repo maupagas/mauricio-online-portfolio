@@ -1,0 +1,16 @@
+---
+title: "COVID-19 Vaccine allocator"
+author: "Mauricio Patón"
+date: "2020-10-03"
+categories: [covid19, code, MATLAB]
+image: "vaccine-allocation.jpg"
+---
+
+This is a post to explain what was done to simulate the allocation of vaccines during the COVID-19 pandemic.
+
+This code and its figures were developed in MATLAB.
+
+![Vaccine allocation simulation for different age groups](vaccine-allocation.jpg){#fig-vaccine-allocation}
+
+
+The model simulating the allocation of vaccined as per age groups can be seen in @fig-vaccine-allocation.

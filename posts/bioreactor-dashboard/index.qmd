@@ -1,0 +1,19 @@
+---
+title: "Bioreactor online simulator dashboard"
+author: "Mauricio Patón"
+date: "2024-02-01"
+categories: [bioprocesses, code, shiny, quarto]
+image: "bioreactor-simulator-dashboard.jpg"
+---
+
+This is a post to explain what is done in the online dashboard to simulate the 
+a biological reactor.
+
+This code was developed in Python and the dashboard was created using Shiny for Python.
+
+The online simulation tool is available in [this website](https://envbioprom.shinyapps.io/bioreactor-dashboard/)
+
+![Template of the dashboard including the online model simulator for a series of bioreactors](bioreactor-simulator-dashboard.jpg){#fig-model-dashboard}
+
+
+The model simulator can be seen in @fig-model-dashboard.

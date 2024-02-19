@@ -1,0 +1,25 @@
+---
+title: "Pathway evaluation for the quantification of ATP yields"
+author: "Mauricio Patón"
+date: "2020-02-01"
+categories: [bioprocesses, code, matlab, atp yields]
+image: "pathway-evaluation.jpeg"
+---
+
+This is a post to explain what was done in the framework to calculate the yields of ATP using first principles..
+
+This code was developed in MATLAB together with its visualizations. 
+
+The online simulation tool is available in [this website](https://envbioprom.shinyapps.io/bioreactor-dashboard/)
+
+![Template of the dashboard including the online model simulator for a series of bioreactors](pathway-evaluation.jpeg){#fig-propionate-pathway}
+
+
+The model simulator can be seen in @fig-propionate-pathway.
+
+An interest insight is to plot the methanogenic niche, also known as the range in which both reactions appear to be feasible. The methanogenic niche can be seen in @fig-methanogenic-niche.
+
+![Methanogenic niche](methanogenic-niche.jpeg){#fig-methanogenic-niche}
+
+
+

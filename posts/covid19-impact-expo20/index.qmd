@@ -1,0 +1,19 @@
+---
+title: "COVID-19 Expo Model"
+author: "Mauricio Patón"
+date: "2022-01-03"
+categories: [covid19, code, shiny]
+image: "covid19-online-simulator.jpg"
+---
+
+This is a post to explain what is done in the online dashboard to simulate the 
+evolution of COVID-19.
+
+This code was developed in R and the dashboard was created using Shiny.
+
+The online simulation tool is available in [this website](https://envbioprom.shinyapps.io/COVID19_Model_KU/)
+
+![Template of the online model simulator for COVID-19](covid19-online-simulator.jpg){#fig-model-simulator}
+
+
+The model simulator can be seen in @fig-model-simulator.

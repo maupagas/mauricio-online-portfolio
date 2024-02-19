@@ -1,20 +1,44 @@
 project:
   type: website
 
-website: 
-  title: "mauricio-quarto-blog"
-  navbar: 
-    right: 
-      - about.qmd
+website:
+  title: "Mauricio Patón"
+  search: 
+    location: navbar
+    type: overlay
+  navbar:
+    left:
+      - text: Home
+        href: index.qmd
+      - text: Projects
+        href: projects.qmd
+      - text: Resume
+        href: resume.qmd
+      - text: Quarto-CV
+        href: Mauricio-CV-DS.qmd
+    right:
+      - text: About
+        href: about.qmd
       - icon: github
-        href: https://github.com/maupagas
+        href: https://github.com/
       - icon: twitter
-        href: https://twitter.com/maupagas
-format: 
-  html: 
-    theme: cerulean
-    css: styles.css
-
-editor: visual
-
-
+        href: https://twitter.com
+        
+  page-footer:
+    center: |
+      [Contact Mauricio Patón](mailto:maupagas@gmail.com)
+    left: |
+      Made with [Quarto](https://quarto.org)
+    right: |
+      [Github Code Repo](https://github.com/mauricio-online-portfolio)
+    background: "grey"
+format:
+  html:
+    theme: 
+      light: flatly
+      dark: darkly
+    code-link: true
+    code-fold: show
+    # code-tools: true
+    highlight-style: github
+    

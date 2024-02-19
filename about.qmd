@@ -1,0 +1,20 @@
+---
+title: "Mauricio Patón"
+image: images/idPicMauricioRound.png
+about:
+  template: jolla
+  image-width: 20em
+  image-shape: round
+  links:
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/maupagas
+    - icon: linkedin
+      text: LinkedIn
+      href: https://linkedin.com/in/mauriciopaton/
+    - icon: github
+      text: Github
+      href: https://github.com/maupagas
+---
+
+Hi, I am Mauricio. I am an Researcher with over 10 years of experience working with mathematical models. For that that wished to turn into a Data Scientist. Why? I have a passion for modelling and I also want that the models I build are useful. I think then that Machine Learning models are the perfect tool to answer that wish?
