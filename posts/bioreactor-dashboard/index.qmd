@@ -6,14 +6,62 @@ categories: [bioprocesses, code, shiny, quarto]
 image: "bioreactor-simulator-dashboard.jpg"
 ---
 
-This is a post to explain what is done in the online dashboard to simulate the 
-a biological reactor.
+# Summary
+
+An [online dashboard that contains a web simulator](https://envbioprom.shinyapps.io/bioreactor-dashboard/) was built to showcase  to model the efficacy of the treatment of a rich in methanolamine wastewater. The wastewater contains high concentrations of ethanolamine, which is a compound that can be degraded either aerobically or anaerobically. 
+
+Mathematical models are useful tools to predict the performance at steady state of a bioreactor. In this dashboard, a model developed to treat the rich inflow stream of ethanolamine is proposed. Different microbial reactions are proposed 
+
+[Industrial wastewaters rich in ethanolamine](https://doi.org/10.1016/j.psep.2022.05.054)
+
+Ethanolamine presents a ratio 2:1 Carbon:Nitrogen, which makes it somehow difficult to treat in a single unit (e.g. an anerobic digester). A train unit of a series of bioreactors needs to be designed in order to consume all the organic matter and also futher treatment is required for further reduction of the nitrogen compounds (mainly nitrate).
+
+This dashboard is a demonstration tool on how a train unit consisting of a UASB (Upflow Anaerobic Slugde Blanket) together with a partial nitrification/anammox system would work to remove ethanolamine from the wastewater. The dashboard includes also an estimation of the potential costs that would be incurred for treating such wastewater following the design proposed.
+
+The adjustable parameters to evaluate the treatment proposed are as follows:
+
+- Volumes of the reactor
+- SRT
+- pH
+- Concentration of oxygen of the partial nitrification reactor
+- Influent concentrations:
+  - Ethanolamine
+  - Ammonium
+  - Nitrite
+  - Nitrate
+  - Inorganic carbon
+
+
+## Technical features 
 
 This code was developed in Python and the dashboard was created using Shiny for Python.
 
-The online simulation tool is available in [this website](https://envbioprom.shinyapps.io/bioreactor-dashboard/)
+Firstly, the code containing the bioreactor model is wrote in a modular way and can be executed by runnung the `run_simulation.py` file. 
+
+The code is then executed using this workflow
+
+```{mermaid}
+graph LR
+A[run_simulation.py] --> B[bioreactor_model.py]
+A --> C[bioreactor_cost.py]
+B --> D[bioreactor_parameters.py]
+C --> D
+
+
+```
+
+The online simulation tool is available in [this website](https://envbioprom.shinyapps.io/bioreactor-dashboard/). An snapshot of the model simulator is shown in @fig-model-dashboard.
 
 ![Template of the dashboard including the online model simulator for a series of bioreactors](bioreactor-simulator-dashboard.jpg){#fig-model-dashboard}
 
+The main figure shows the concentrations of the compounds of interest in steady state in the effluent of each one of the bioreactor units considered (e.g. UASB, Partial nitrification and anammox). 
 
-The model simulator can be seen in @fig-model-dashboard.
+An estimation of the capital expenditure based on the volumes of each reactor unit is provided, together with an estimation of the operational expenses based on the size of each bioreactor and the oxygen requirements for the partial nitrification reactor.
+
+## Further improvements
+
+Further improvements to this dashboard include (but not limited to):
+
+- Calculate volumes based on discharge limits in steady state. 
+- Include dynamic concentrations results for each bioreactor.
+- Refine economic calculations (CAPEX and OPEX).

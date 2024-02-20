@@ -14,3 +14,5 @@ This code and its figures were developed in MATLAB.
 
 
 The model simulating the allocation of vaccined as per age groups can be seen in @fig-vaccine-allocation.
+
+Get some information [from here](https://www.ku.ac.ae/khalifa-university-researchers-develop-model-to-determine-who-to-vaccinate-first-against-covid-19-to-reduce-total-fatalities) and [here](https://www.ku.ac.ae/should-millennials-and-gen-z-get-the-vaccine-first)

@@ -6,11 +6,11 @@ categories: [bioprocesses, code, matlab, atp yields]
 image: "pathway-evaluation.jpeg"
 ---
 
-This is a post to explain what was done in the framework to calculate the yields of ATP using first principles..
+Microbial path
+
+This is a post to explain what was done in the framework to calculate the yields of ATP using first principles.
 
 This code was developed in MATLAB together with its visualizations. 
-
-The online simulation tool is available in [this website](https://envbioprom.shinyapps.io/bioreactor-dashboard/)
 
 ![Template of the dashboard including the online model simulator for a series of bioreactors](pathway-evaluation.jpeg){#fig-propionate-pathway}
 
@@ -21,5 +21,26 @@ An interest insight is to plot the methanogenic niche, also known as the range i
 
 ![Methanogenic niche](methanogenic-niche.jpeg){#fig-methanogenic-niche}
 
+Decoding the Energy Dance of Microbes: Unraveling ATP Production in Wastewater Treatment
 
+Imagine a bustling microbial nightclub deep within a sewage treatment plant. The VIP guests? Tiny organisms that break down waste, turning it into something less gross. But how do they do it? And which pathways lead to the best dance moves (read: ATP production)?
+
+In a recent study, scientists put on their lab coats and hit the microbial dance floor. Their mission: to figure out which biochemical pathways yield the most ATP (the cellular energy currency) during propionate oxidation. Let’s break it down:
+
+The Pathway Shuffle:
+Microbes have options. Different pathways involve various metabolites, electron carriers, and ATP steps.
+Picture a dance-off: Some pathways moonwalk, while others cha-cha with protons (or their equivalents).
+The Feasibility Check:
+To get past the bouncer (i.e., feasibility evaluation), a pathway must meet two criteria:
+All reaction steps must have nonpositive Gibbs energy changes (no energy vampires allowed!).
+Metabolite concentrations must stay within a physiological range (10⁻⁶ to 10⁻² M).
+The ATP Champions:
+Under optimal conditions, the Smithella pathway struts its stuff, yielding the most ATP.
+The methylmalonyl-coenzyme A (CoA) pathways? They’re like backup dancers—only grooving with pyruvate in a cyclical routine.
+The Methane Afterparty:
+In methanogenic environments (think swamps), other pathways take the spotlight.
+Lactate and hydroxypropionyl-CoA pathways? They’re the headliners, belting out ATP hits.
+Electron Transfer Tango:
+How do microbes exchange electrons? Some flirt with dissolved hydrogen via the Smithella pathway.
+Others? They salsa with formate or engage in direct electron transfer (fancy footwork!).
 

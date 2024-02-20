@@ -28,13 +28,19 @@ knitr::knit_engines$set('javascript')
 
 In this report, an analysis of the data to be used to estimate epidemiological parameters for the different SARS-CoV-2 lineages of interest (e.g.: BA.1, B.1.629, etc.) is presented. Firstly, the data is cleaned to ensure that no duplicates, and proper lineages are used. Then, the data analysis is conducted. In particular, the analysis is focused on the identification of potential biases in the data as it compares people who were sequenced against people who were not sequenced.
 
+:::{.callout-warning}
+Due to confidentiality issues, the results have been masked in this document accordingly.
+
+The data displayed in the figures, tables and text are shown for illustrative purposes and do not reflect real numbers.
+:::
+
 ## Sampling Issues
 
-As outlined in a previous communication shared by email, the sampling strategy followed in the UAE from <u>**January 1st, 2022**</u> comprised the sequencing of individuals that belonged to one of the following groups:
+The [sampling strategy followed in the United Arab Emirates]() from <u>**January 1st, 2022**</u> comprised the sequencing of samples from individuals that belonged to one of the following groups:
 
-1.  All people in ICU/HDU and/or the deceased were sequenced.
-2.  All people who entered through a port of entry and had a PCR positive were sequenced.
-3.  The rest of the infected people were sequenced based on a random sample proportionally to the number of positives reported weekly by each lab.
+1.  All people in ICU/HDU and/or deceased.
+2.  All people who entered through a port of entry and had a positive PCR.
+3.  The rest of the infected people were sequenced based on a random sample proportionally to the number of positives reported by each lab on a weekly basis.
 
 Sampling prior to the stated day needs to be double-checked for proper interpretation.
 
@@ -71,8 +77,6 @@ library(data.table)
 First, we are going to load the dataset and examine it:
 
 ```{r load-raw-data, echo = F}
-# filename = "2022-12-28-omicron-data.rds"
-
 # Load original data and missing ID data
 omicron.data <- read.delim2("./data-provided/20230110-Lineage_Subvariant-Study.txt", sep = ",", header = T)
 missing.age.IDs <- openxlsx::read.xlsx("./data-provided/20230117-Lineage-of-missing-age-pseduoids.xlsx")
@@ -113,9 +117,9 @@ As we see, we have information per patient for the following variables:
 -   `Tableau_ICU_Status`: Label if the patient is ICU/HDU or dead. *This field will be used to label the patients as HDU/ICU pr dead as reason per sequencing. All patients labeled in this field were sequenced. (Group 1)*
 -   `Tableau_Travel_Country_Name`: Travel history of the positive patient in the last XX days. *This field will be used to label those patients who tested positive and had a travel history according to the IDN and PRP databases. (Group 2)*
 
-## Clean data
+## Cleaning data procedure
 
-Firstly, we need to clean the data to ensure that no double-counting occurs. In particular we are going to focus on three aspects:
+Firstly, we need to clean the data to ensure that the data is of a good enough quality and no double-counting occurs. In particular we are going to focus on three aspects:
 
 1.  Re-code lineage into relevant variants. In particular:
 
@@ -173,23 +177,23 @@ After the re-coding of the lineages in the databases, the number of records for 
 
 ```{r recode-lineages, fig.cap = "Number of records per lineage before removal of duplicates."}
 data.lineages <- omicron.data %>%  
-                              # Recode variant names
-                              mutate(Lineage.Short = sub('([A-Z]{1,2}[.]?[0-9]{1,3}[.]?[0-9]{0,3}[.]?[0-9]{0,1}).*', "\\1", Lineage)) %>%
-                              mutate(Lineage.Short = sub('([A-Z]{2}.[0-9]{1}).*', "\\1", Lineage.Short))  %>%
-                              mutate(Lineage.Short = str_replace(Lineage.Short, "B.1.1.5", "B.1.1.529")) %>%
-                              mutate(Lineage.Short = str_replace(Lineage.Short, "B.1.1.529", "BA.1")) %>%
-                              mutate(Lineage.Short = if_else(startsWith(Lineage.Short, "AY"), "B.1.617.2", Lineage.Short)) %>%
-                              mutate(Lineage.Short = if_else(str_detect(Lineage.Short, "B.1.617.2"), "B.1.617.2", Lineage.Short)) %>% 
-                              # Fill missing age values
-                              mutate(AGE = as.numeric(AGE)) %>% 
-                              left_join(missing.age.IDs, by = c("PseudoID")) %>% 
-                              mutate(Age = ifelse(is.na(AGE.x), AGE.y, AGE.x)) %>% 
-                              select(-c(AGE.x, AGE.y)) %>%
-                              filter(Age >= 0, Age <= 150) %>% 
-                              filter(Lineage.Short != "Jul 25 2022 12:00AM", 
-                                     CollectionDateTime >= "2020-02-01",
-                                     CollectionDateTime <= "2022-09-30") %>% 
-                              filter(startsWith(PseudoID, "{"))
+          # Recode variant names
+          mutate(Lineage.Short = sub('([A-Z]{1,2}[.]?[0-9]{1,3}[.]?[0-9]{0,3}[.]?[0-9]{0,1}).*', "\\1", Lineage)) %>%
+          mutate(Lineage.Short = sub('([A-Z]{2}.[0-9]{1}).*', "\\1", Lineage.Short))  %>%
+          mutate(Lineage.Short = str_replace(Lineage.Short, "B.1.1.5", "B.1.1.529")) %>%
+          mutate(Lineage.Short = str_replace(Lineage.Short, "B.1.1.529", "BA.1")) %>%
+          mutate(Lineage.Short = if_else(startsWith(Lineage.Short, "AY"), "B.1.617.2", Lineage.Short)) %>%
+          mutate(Lineage.Short = if_else(str_detect(Lineage.Short, "B.1.617.2"), "B.1.617.2", Lineage.Short)) %>% 
+          # Fill missing age values
+          mutate(AGE = as.numeric(AGE)) %>% 
+          left_join(missing.age.IDs, by = c("PseudoID")) %>% 
+          mutate(Age = ifelse(is.na(AGE.x), AGE.y, AGE.x)) %>% 
+          select(-c(AGE.x, AGE.y)) %>%
+          filter(Age >= 0, Age <= 150) %>% 
+          filter(Lineage.Short != "Jul 25 2022 12:00AM", 
+                 CollectionDateTime >= "2020-02-01",
+                 CollectionDateTime <= "2022-09-30") %>% 
+          filter(startsWith(PseudoID, "{"))
 ```
 
 
@@ -198,10 +202,11 @@ data.lineages <- omicron.data %>%
 data.lineages %>% filter(Sequenced == 1) %>% 
   group_by(Lineage.Short) %>% summarise(n = n()) %>% 
   filter(n > min_n_variant) %>%
+  mutate(n = log(n, base = 42)) %>%
   ggplot(aes(x = Lineage.Short, y = n, fill = Lineage.Short)) +
   # geom_col(aes(fill = Lineage.Short)) + 
   geom_bar(stat = "identity",  color = "black") +
-  geom_text(aes(label=n), position=position_dodge(width=0.9), vjust=-0.25, size=2) +
+  geom_text(aes(label=round(n,1)), position=position_dodge(width=0.9), vjust=-0.25, size=2) +
   scale_y_continuous(labels = comma) +
           xlab("Lineage sequenced") + ylab("# people") +
   ggtitle("Number of sequenced records before removing duplicate IDs")
